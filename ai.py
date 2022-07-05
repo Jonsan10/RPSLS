@@ -1,9 +1,15 @@
 from player import Player
+import random
 #child
 class AI(Player):
-    def __init__(self,name, win_counter):
-        super().__init__(name, win_counter)
+    def __init__(self):
+        #self.choose_gesture()
+        super().__init__()
+
 
     def choose_gesture (self):
-            print('rock, paper, scissors, lizards, spock')
+            print('Rock, Paper, Scissors, Lizard, Spock')
+            #self.get_gesture = self.gestures_list
+            self.chosen_gesture= random.choice(self.gestures_list)
+            print (self.chosen_gesture)
     
