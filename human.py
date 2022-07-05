@@ -1,6 +1,4 @@
-class player:
+#child
+class Human(Player):
     def __init__(self,name, win_counter):
-        self.name = name
-        self.gesters = ''
-        self.win_counter = win_counter
-
+        super().__init__(name, win_counter)
