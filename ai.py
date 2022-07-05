@@ -1,3 +1,4 @@
+from player import Player
 #child
 class AI(Player):
     def __init__(self,name, win_counter):
@@ -5,3 +6,4 @@ class AI(Player):
 
     def choose_gesture (self):
             print('rock, paper, scissors, lizards, spock')
+    
