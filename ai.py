@@ -8,7 +8,7 @@ class AI(Player):
 
 
     def choose_gesture (self):
-            print('Rock, Paper, Scissors, Lizard, Spock')
+            print('AI choses:')
             #self.get_gesture = self.gestures_list
             self.chosen_gesture= random.choice(self.gestures_list)
             print (self.chosen_gesture)
