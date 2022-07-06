@@ -1,9 +1,11 @@
 from game import Game
-from ai import AI
-from human import Human
-# if __name__ = '__main__':
-# game = Game()
-# game.run_game()
-# pass
-test= Human ()
-test.choose_gesture()
+
+
+game = Game()
+game.run_game()
+
+
+# player1 = Human()
+
+# player1.choose_gesture()
+
