@@ -7,3 +7,5 @@ class AI(Player):
     def choose_gesture(self):
         print('rock, paper, scissors, lizards, spock')
         return self.gester_list[0]
+        
+    print(choose_gesture)
