@@ -5,15 +5,12 @@ class Human(Player):
         super().__init__()
         
     def choose_name(self, player_num):
-        self.name = input(f'player {player_num} please enter your name')
+        self.name = input(f'player {player_num} please enter your name: ')
+        print(f'Welcome {self.name}!')
 
 
     def choose_gesture (self):
-        # present gesture options to user
-        # capture user's selection
-        # index the gestures list with the user's selection
-        # display user's selection to user
-
+        
         # (validate the user's selection)
 
         for num in range(0, len(self.gestures_list)):

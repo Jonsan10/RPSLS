@@ -1,19 +1,21 @@
 from human import Human
 from ai import AI
+
+
 class Game:
     def __init__(self):
         self.player1 = Human()
-        self.player2 = AI()
+        self.player2 = AI(self.player2.name)
 
     def greetings(self):
-        print('Welcome to RPSLS')
+        print('Hello and welcome to the tantalizing game of ROCK PAPER SCISSORS LIZARD SPOCK! \nThe ultimate tournament winner will be the player who wins the best of three (3) matches.\nMay the odds be ever in your favor!')
 
     def rules(self):
-        print('Rules of the game are, Scissors cuts Paper,\n ,Paper covers Rock, \n Lizard poisons Spock, \n Spock smashes Scissors \n Scissors decapitates Lizard, \n Lizard eats Paper, \n Paper disproves Spock, \n Spock vaporizes Rock, \n Rock crushes Scissors')
+        print('Rules of the game are simple and are as follows:\nScissors cuts Paper\nPaper covers Rock\nLizard poisons Spock\nSpock smashes Scissors\nScissors decapitates Lizard,\nLizard eats Paper,\nPaper disproves Spock,\nSpock vaporizes Rock,\nRock crushes Scissors')
 
     def setup_game(self):
         # Capture game mode selection from user (input())
-        user_selection = input('please select 1 for single player or select 2 for Mulit player ')
+        user_selection = input('Please select either 1 for single player or 2 for a multiplayer match: ')
 
         # if user selection is 2 (m-plyr) then p2 = human
         if user_selection == '2':
@@ -25,8 +27,8 @@ class Game:
 
             
         # display game mode
-        self.player1.choose_name(;name)
-        self.player2.choose_name()
+        self.player1.choose_name(player_num=1)
+        self.player2.choose_name(self.name)
     
 
     def run_game(self):
