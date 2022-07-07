@@ -5,7 +5,7 @@ from ai import AI
 class Game:
     def __init__(self):
         self.player1 = Human()
-        self.player2 = AI(self.player2.name)
+        self.player2 = AI(self.player2)
 
     def greetings(self):
         print('Hello and welcome to the tantalizing game of ROCK PAPER SCISSORS LIZARD SPOCK! \nThe ultimate tournament winner will be the player who wins the best of three (3) matches.\nMay the odds be ever in your favor!')
