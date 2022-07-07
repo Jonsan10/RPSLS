@@ -4,8 +4,8 @@ class Human(Player):
     def __init__(self):
         super().__init__()
         
-    def choose_name(self, player_num):
-        self.name = input(f'player {player_num} please enter your name: ')
+    def choose_name(self,player_num):
+        self.name= input(f'Player {player_num} please enter your name: ')
         print(f'Welcome {self.name}!')
 
 
@@ -15,16 +15,11 @@ class Human(Player):
 
         for num in range(0, len(self.gestures_list)):
             print(f'{num} {self.gestures_list[num]}')   
-
+        #if num in range(0, len(self.gestures_list)) >= 5:
+           # print(f'This is not a valid optiom')
+            #return
         
-        user_selection = int(input('Please use the number keys to enter your gesture selection:  '))
-        # if user_selection <= 5:
-        #         self.choose_gesture = self.gestures_list[user_selection]
-        #         print(f'Nicely done {self.name}, you have selected {self.chosen_gesture}')
-        # else:
-        #      print('invalid value.')
-        #      return
-        
+        user_selection = int(input('Please use the number keys to enter your gesture selection:  '))  
         self.chosen_gesture = self.gestures_list[user_selection]
         print(f'Nicely done {self.name}, you have selected {self.chosen_gesture}')
            

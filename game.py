@@ -20,10 +20,10 @@ class Game:
         # if user selection is 2 (m-plyr) then p2 = human
         if user_selection == '2':
             self.player2 = Human()
-        # elif user_selection == '1':
-            # self.player1 = Human()
-        else:
-            return
+        #elif user_selection == '1':
+            #self.player2 = AI()
+        #else:
+           # return
 
             
         # display game mode
@@ -44,10 +44,6 @@ class Game:
             self.player1.choose_gesture()
             self.player2.choose_gesture()
             self.compare_gestures()
-            #compare the gestures
-        
-
-            
 
     
     def compare_gestures(self):
@@ -55,6 +51,7 @@ class Game:
         gesture_2 = self.player2.chosen_gesture
 
         if gesture_1 == gesture_2:
+            print('This is a tie, no winner!')
             pass
         elif gesture_1 == 'Rock':
             if gesture_2 == 'Scissors' or gesture_2 == 'Lizard':
@@ -63,8 +60,6 @@ class Game:
             else:
                 self.player2.score_point()
                 print(f'{self.player2.name} has won the round')
-
-               
 
         elif gesture_1 == 'Paper':
             if gesture_2 == 'Spock' or gesture_2 == 'Rock':
@@ -101,6 +96,6 @@ class Game:
 
     def display_winner(self):
         if self.player1.win_counter == 2:
-            print(f'Congrats {self.player1.name} has won the game')
+            print(f'Well, well, well, {self.player1.name}! The odds WERE ever in your favor, you have won the game.')
         elif self.player2.win_counter == 2:
-            print(f'Congrats {self.player2.name} has won the game')
+            print(f'{self.player2.name}, do the celebration dance, you have won the game?!')
