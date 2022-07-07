@@ -11,7 +11,7 @@ class Game:
         print('Hello and welcome to the tantalizing game of ROCK PAPER SCISSORS LIZARD SPOCK! \nThe tournament winner will be the player who wins the best of three (3) matches for ultimate bragging rights.\nMay the odds be ever in your favor!')
 
     def rules(self):
-        print('Rules of the game are simple and are as follows:\nScissors cuts Paper\nPaper covers Rock\nLizard poisons Spock\nSpock smashes Scissors\nScissors decapitates Lizard,\nLizard eats Paper,\nPaper disproves Spock,\nSpock vaporizes Rock,\nRock crushes Scissors')
+        print('Rules of the game are simple and are as follows:\nScissors cuts Paper\nPaper covers Rock\nLizard poisons Spock\nSpock smashes Scissors\nScissors decapitates Lizard\nLizard eats Paper\nPaper disproves Spock\nSpock vaporizes Rock\nRock crushes Scissors')
 
     def setup_game(self):
         # Capture game mode selection from user (input())
@@ -20,15 +20,15 @@ class Game:
         # if user selection is 2 (m-plyr) then p2 = human
         if user_selection == '2':
             self.player2 = Human()
-        elif user_selection == '1':
-            self.player1 = Human()
+        # elif user_selection == '1':
+            # self.player1 = Human()
         else:
             return
 
             
         # display game mode
         self.player1.choose_name(player_num=1)
-        self.player2.choose_name(player_num=any)
+        self.player2.choose_name(player_num=2)
     
 
     def run_game(self):
@@ -43,7 +43,12 @@ class Game:
         while self.player1.win_counter < 2 and self.player2.win_counter < 2:
             self.player1.choose_gesture()
             self.player2.choose_gesture()
+            self.compare_gestures()
             #compare the gestures
+        
+
+            
+
     
     def compare_gestures(self):
         gesture_1 = self.player1.chosen_gesture
@@ -54,32 +59,48 @@ class Game:
         elif gesture_1 == 'Rock':
             if gesture_2 == 'Scissors' or gesture_2 == 'Lizard':
                 self.player1.score_point()
+                print(f'{self.player1.name} has won the round')
             else:
                 self.player2.score_point()
+                print(f'{self.player2.name} has won the round')
+
+               
 
         elif gesture_1 == 'Paper':
             if gesture_2 == 'Spock' or gesture_2 == 'Rock':
                 self.player1.score_point()
-            else: self.player2.score_point()
+                print(f'{self.player1.name} has won the round')
+            else: 
+                self.player2.score_point()
+                print(f'{self.player2.name} has won the round')
 
         elif gesture_1 == 'Scissors':
             if gesture_2 == 'Paper' or gesture_2 == 'Lizard':
                 self.player1.score_point()
-            else: self.player2.score_point()
+                print(f'{self.player1.name} has won the round')
+            else: 
+                self.player2.score_point()
+                print(f'{self.player2.name} has won the round')
 
         elif gesture_1 == 'Lizard':
             if gesture_2 == 'Paper' or gesture_2 == 'Spock':
                 self.player1.score_point()
-            else: self.player2.score_point()
+                print(f'{self.player1.name} has won the round')
+            else: 
+                self.player2.score_point()
+                print(f'{self.player2.name} has won the round')
 
         elif gesture_1 == 'Spock':
             if gesture_2 == 'Rock' or gesture_2 == 'Scissors':
                 self.player1.score_point()
-            else: self.player2.score_point()
+                print(f'{self.player1.name} has won the round')
+            else: 
+                self.player2.score_point()
+                print(f'{self.player2.name} has won the round')
 
 
     def display_winner(self):
         if self.player1.win_counter == 2:
-            print(f'Congradualtions {self.player1} has won the game')
+            print(f'Congrats {self.player1.name} has won the game')
         elif self.player2.win_counter == 2:
-            print(f'Congrats {self.player2} has won the game')
+            print(f'Congrats {self.player2.name} has won the game')
