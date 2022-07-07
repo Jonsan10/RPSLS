@@ -98,4 +98,4 @@ class Game:
         if self.player1.win_counter == 2:
             print(f'Well, well, well, {self.player1.name}! The odds WERE ever in your favor, you have won the game.')
         elif self.player2.win_counter == 2:
-            print(f'{self.player2.name}, do the celebration dance, you have won the game?!')
+            print(f'{self.player2.name}, do the celebration dance, you have won the game!')
